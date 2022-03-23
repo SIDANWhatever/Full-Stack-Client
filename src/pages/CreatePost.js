@@ -20,7 +20,7 @@ function CreatePost() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/posts", data).then((response) => {
+    axios.post("https://full-stack-sidan.herokuapp.com/posts", data).then((response) => {
       navigate(`/`);
     });
   };

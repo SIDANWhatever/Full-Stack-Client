@@ -8,7 +8,7 @@ function Home() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
+    axios.get("https://full-stack-sidan.herokuapp.com/posts").then((response) => {
       setListOfPosts(response.data);
     })
   }, [])
