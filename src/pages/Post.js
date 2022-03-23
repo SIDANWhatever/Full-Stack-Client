@@ -7,7 +7,7 @@ function Post() {
   const [postObject, setPostObject] = useState({});
 
   useEffect(() => {
-    axios.get(`https://full-stack-sidan.herokuapp.com/byId/${id}`).then((response) => {
+    axios.get(`https://full-stack-sidan.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
   }, []);
