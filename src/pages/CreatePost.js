@@ -20,12 +20,25 @@ function CreatePost() {
   });
 
   const onSubmit = (data) => {
-    axios.post("https://full-stack-sidan.herokuapp.com/posts", data).then((response) => {
-      navigate(`/`);
-    });
+    axios
+      .post("https://full-stack-sidan.herokuapp.com/posts", data)
+      .then((response) => {
+        navigate(`/`);
+      });
   };
 
   return (
+    // <div className="createPostBody">
+    //   <h1>Animation Input</h1>
+
+    //   <div className="form">
+    //     <input type="text" name="name" autoComplete="off" required />
+    //     <label htmlFor="name" className="label-name">
+    //       <span class="content-name">Name</span>
+    //     </label>
+    //   </div>
+    // </div>
+
     <div className="createPostPage">
       <Formik
         initialValues={initialValue}
@@ -39,6 +52,7 @@ function CreatePost() {
             id="inputCreatePost"
             name="title"
             placeholder="(Ex. Anson Banana ...)"
+            autocomplete="off"
           />
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
@@ -46,6 +60,7 @@ function CreatePost() {
             id="inputCreatePost"
             name="postText"
             placeholder="(Ex. Today is a good day!)"
+            autocomplete="off"
           />
           <label>Username: </label>
           <ErrorMessage name="username" component="span" />
@@ -53,6 +68,7 @@ function CreatePost() {
             id="inputCreatePost"
             name="username"
             placeholder="(Ex. John ...)"
+            autocomplete="off"
           />
           <button type="submit"> Create Post </button>
         </Form>
